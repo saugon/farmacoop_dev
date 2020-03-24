@@ -1,0 +1,257 @@
+:root {
+  --main-color: #00aaeb;
+  --main-dark-color: #2b398c;
+  --header-height: 7rem;
+  --secondary-color: #141d3f; }
+
+@font-face {
+  font-family: "Farmacoop";
+  src: url(../fonts/CircularStd-Book_0.otf);
+  font-weight: 400; }
+@font-face {
+  font-family: "Farmacoop";
+  src: url(../fonts/CircularStd-Medium_0.otf);
+  font-weight: 500; }
+@font-face {
+  font-family: "Farmacoop";
+  src: url(../fonts/CircularStd-Bold_0.otf);
+  font-weight: 700; }
+@font-face {
+  font-family: "Farmacoop";
+  src: url(../fonts/CircularStd-Black_0.otf);
+  font-weight: 800; }
+:root {
+  --link-color: #222; }
+
+body,
+body * {
+  box-sizing: border-box;
+  font-family: "Farmacoop", sans-serif;
+  color: #222; }
+
+#logo {
+  height: auto; }
+
+body > header {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  height: var(--header-height);
+  width: 100vw;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease; }
+  body > header .container,
+  body > header a,
+  body > header #logo {
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
+  body > header.collapse {
+    background: rgba(20, 29, 63, 0.3);
+    height: 6rem; }
+    body > header.collapse .container {
+      padding: 1rem 0;
+      height: 100%; }
+    body > header.collapse nav {
+      padding: 0; }
+      body > header.collapse nav a {
+        color: #fff; }
+    body > header.collapse #logo {
+      width: auto;
+      height: 100%; }
+
+#landing {
+  min-height: calc(var(--vh, 1vh) * 107);
+  padding-top: calc(var(--header-height) + 10vh);
+  background-image: url("../img/1-01.jpg");
+  background-size: contain;
+  background-position: left top;
+  background-repeat: no-repeat; }
+  #landing .container {
+    grid-template-columns: 30rem minmax(0, 1fr);
+    gap: 5rem;
+    align-items: center; }
+  #landing img {
+    border-radius: 3.5rem; }
+
+.tracking-mega {
+  letter-spacing: .18rem; }
+
+.leading-min {
+  line-height: 1.2; }
+
+.text-main-color {
+  color: var(--main-color); }
+
+.shadow-fc {
+  box-shadow: 17px 22px 35px 0px rgba(50, 50, 50, 0.11); }
+
+#hero .title {
+  max-width: 39rem; }
+
+#products img {
+  height: 100%;
+  max-width: 39rem;
+  object-fit: contain; }
+
+#hero-2 {
+  background-image: url("../img/hero.png");
+  background-size: contain;
+  background-position: right top;
+  background-repeat: no-repeat;
+  height: 45rem; }
+  #hero-2 .block > * {
+    padding-left: 4rem; }
+  #hero-2 .title {
+    margin-top: 20rem; }
+
+#commitment .grid {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+#commitment .block {
+  border-radius: 1.2rem;
+  overflow: hidden; }
+  #commitment .block img {
+    width: 100%;
+    height: 16rem;
+    object-fit: cover;
+    object-position: center; }
+
+#donations .icon {
+  height: 5rem; }
+#donations .block {
+  border-radius: 1.5rem;
+  overflow: hidden;
+  display: grid;
+  max-width: 18rem;
+  grid-template-rows: 1fr 3rem 1fr auto; }
+
+#contact #contact-list {
+  justify-content: space-between; }
+  #contact #contact-list > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; }
+  #contact #contact-list .text {
+    color: var(--main-dark-color);
+    font-size: 1.2rem; }
+  #contact #contact-list .image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2.7rem;
+    border-radius: 1.5rem;
+    width: 10.5em;
+    height: 10.5rem; }
+
+footer {
+  background: var(--secondary-color); }
+  footer #footer-logo {
+    width: 14rem; }
+  footer * {
+    color: #fff; }
+
+/* Components */
+.btn {
+  display: inline-block;
+  border-radius: 20rem;
+  padding: .8rem 1.5rem;
+  font-size: 1.15rem;
+  color: #fff;
+  text-align: center;
+  background: var(--main-color);
+  background: -moz-linear-gradient(90deg, #00aaeb 0%, #2b398c 36%, #2b398c 61%, #00aaeb 100%);
+  background: -webkit-linear-gradient(90deg, #00aaeb 0%, #2b398c 36%, #2b398c 61%, #00aaeb 100%);
+  background: linear-gradient(90deg, #00aaeb 0%, #2b398c 36%, #2b398c 61%, #00aaeb 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00aaeb", endColorstr="#00aaeb", GradientType=1);
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  background-size: 280% 100%; }
+  .btn:hover {
+    background-position: 100% 0; }
+  .btn.white {
+    background: #fff;
+    color: var(--main-color); }
+    .btn.white:hover {
+      background: var(--main-dark-color);
+      color: #fff; }
+  .btn.lg {
+    padding: .8rem 3rem; }
+
+.block,
+#contact #contact-list > div {
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease; }
+  .block:hover,
+  #contact #contact-list > div:hover {
+    transform: scale(1.05); }
+
+.title {
+  position: relative;
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: #4e4e4e;
+  line-height: 1.15;
+  margin-bottom: 2rem; }
+  .title.white {
+    color: #fff; }
+  .title.w-line:before {
+    content: '';
+    position: absolute;
+    width: 3.2rem;
+    height: .35rem;
+    top: -2.5rem;
+    left: 0;
+    background-color: var(--main-dark-color); }
+  .title.w-line.l-bottom:before {
+    top: auto;
+    bottom: -2.5rem; }
+
+.line-bottom {
+  position: relative; }
+  .line-bottom:before {
+    content: '';
+    position: absolute;
+    width: 3.2rem;
+    height: .35rem;
+    bottom: -2.5rem;
+    left: 0;
+    background-color: var(--main-dark-color); }
+
+.glide .glide__slides img {
+  border-radius: 2rem; }
+.glide .glide__arrow {
+  border: none;
+  box-shadow: none;
+  padding: 0; }
+  .glide .glide__arrow img {
+    width: 2rem; }
+.glide .glide__arrow--left {
+  left: -3rem;
+  transform: translateY(-50%) rotate(180deg);
+  transform-origin: center; }
+.glide .glide__arrow--right {
+  right: -3rem; }
+
+.max-w-medium {
+  max-width: 44rem; }
+
+section {
+  position: relative; }
+
+.h-product {
+  position: relative;
+  height: 35rem; }
+
+/*# sourceMappingURL=main.css.map */
