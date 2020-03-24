@@ -186,14 +186,14 @@ footer {
   .btn.lg {
     padding: .8rem 3rem; }
 
-.block,
+#commitment.block,
 #contact #contact-list > div {
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;
   transition: all 0.3s ease; }
-  .block:hover,
+  #commitment.block:hover,
   #contact #contact-list > div:hover {
     transform: scale(1.05); }
 
