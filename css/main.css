@@ -31,9 +31,6 @@ body * {
   font-family: "Farmacoop", sans-serif;
   color: #222; }
 
-#logo {
-  height: auto; }
-
 body > header {
   top: 0;
   z-index: 10;
@@ -76,8 +73,7 @@ body > header {
       width: 5rem; }
   @media (min-width: 1024px) {
     body > header.collapse {
-      background: rgba(20, 29, 63, 0.3);
-      height: 6rem; }
+      background: rgba(20, 29, 63, 0.3); }
       body > header.collapse .container {
         padding: 1rem 0;
         height: 100%; }
@@ -86,13 +82,7 @@ body > header {
         body > header.collapse nav a {
           color: #fff; }
       body > header.collapse #logo {
-        width: auto;
-        height: 100%;
-        -moz-transition: all 0.3s ease;
-        -o-transition: all 0.3s ease;
-        -webkit-transition: all 0.3s ease;
-        -ms-transition: all 0.3s ease;
-        transition: all 0.3s ease; } }
+        width: 8rem; } }
   body > header nav {
     z-index: 11; }
     body > header nav #close-menu {
@@ -135,6 +125,9 @@ html.menu-opened {
     -webkit-transition: all .8s ease;
     -ms-transition: all .8s ease;
     transition: all .8s ease, width .3s ease .6s; }
+    @media (min-width: 1024px) {
+      html.menu-opened #logo-link {
+        transform: none; } }
     html.menu-opened #logo-link #logo {
       width: 5rem; }
 

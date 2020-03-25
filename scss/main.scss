@@ -13,10 +13,6 @@ body * {
   color: #222;
 }
 
-#logo {
-  height: auto;
-}
-
 body>header {
   top: 0;
   z-index: 10;
@@ -57,7 +53,6 @@ body>header {
   @media (min-width: 1024px) {
     &.collapse {
       background: rgba(20, 29, 63, 0.3);
-      height: 6rem;
 
       .container {
         padding: 1rem 0;
@@ -73,9 +68,7 @@ body>header {
       }
 
       #logo {
-        width: auto;
-        height: 100%;
-        @include transition;
+        width: 8rem;
       }
     }
   }
@@ -122,11 +115,17 @@ html.menu-opened {
   #logo-link {
     z-index: 12;
     transform: translateY(1rem);
+
+    @media (min-width: 1024px) {
+      transform: none;
+    }
+
     -moz-transition: all .8s ease;
     -o-transition: all .8s ease;
     -webkit-transition: all .8s ease;
     -ms-transition: all .8s ease;
-    transition: all .8s ease, width .3s ease .6s;
+    transition: all .8s ease,
+    width .3s ease .6s;
 
     #logo {
       width: 5rem;
