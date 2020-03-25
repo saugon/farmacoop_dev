@@ -174,24 +174,49 @@
     <section id='donations' class="pt-32 lg:mt-48 px-5 lg:px-0">
       <div class="container mx-auto max-w-3xl">
         <div class="title w-line">
-          Para poder trabajar y aseguar este nivel de producción, necesitamos todas las manos posibles.
+          Para poder trabajar y asegurar este nivel de producción, necesitamos todas las manos posibles.
         </div>
         <div class="flex flex-wrap justify-center align-center">
           <div class="block m-6 p-8 shadow-fc">
             <img src="img/icons/donate-1.svg" alt="Ícono ayuda económica" class="icon mx-auto mt-4 mb-16">
             <div class="text-center text-2xl font-bold mb-4">Ayuda Económica</div>
-            <div class="text-gray-800 text-lg mb-8 lg:mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-              do
-              eiusmod
-              tempor.
+            <div class="text-gray-800 text-lg mb-8 lg:mb-0">Gracias a tu donación Farmacoop produce insumos
+              indispensables para la lucha contra el coronavirus en Argentina. Todo aporte suma, ayudanos!
             </div>
-            <a href="#mp" class="btn lg">Donar</a>
+            <div>
+              <a mp-mode="dftl"
+                href="https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=538650675-fe3c77f6-0e6c-4f4b-9dcf-df833e03527f"
+                name="MP-payButton" class='btn full mb-4'>Doná $1.000</a>
+              <a mp-mode="dftl"
+                href="https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=538650675-df229be6-05b8-40de-9a56-46c4c359853f"
+                name="MP-payButton" class='btn full mb-4'>Doná $10.000</a>
+              <a mp-mode="dftl"
+                href="https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=538650675-860f7da2-d743-495e-a3a5-7a1b63001424"
+                name="MP-payButton" class='btn full mb-4'>Doná $100.000</a>
+            </div>
+            <script type="text/javascript">
+              (function () {
+                function $MPC_load() {
+                  window.$MPC_loaded !== true && (function () {
+                    var s = document.createElement("script");
+                    s.type = "text/javascript";
+                    s.async = true;
+                    s.src = document.location.protocol + "//secure.mlstatic.com/mptools/render.js";
+                    var x = document.getElementsByTagName('script')[0];
+                    x.parentNode.insertBefore(s, x);
+                    window.$MPC_loaded = true;
+                  })();
+                }
+                window.$MPC_loaded !== true ? (window.attachEvent ? window.attachEvent('onload', $MPC_load) : window
+                  .addEventListener('load', $MPC_load, false)) : null;
+              })();
+            </script>
           </div>
           <div class="block m-6 p-8 shadow-fc">
             <img src="img/icons/donate-2.svg" alt="Ícono ayuda materia prima" class="icon mx-auto mt-4 mb-16">
             <div class="text-center text-2xl font-bold mb-4">Materia Prima</div>
             <div class="text-gray-800 text-lg mb-8 lg:mb-0">Recibimos alcohol etílico y fliserina 80g. </div>
-            <a href="#contact" class="btn lg">Donar</a>
+            <a href="#contact" class="btn lg self-start">Donar</a>
           </div>
         </div>
       </div>
@@ -199,12 +224,18 @@
     <section id="contact" class="py-32 lg:py-40">
       <div class="container mx-auto px-5 lg:px-24">
         <div class="title w-line lg:pb-20">Proponemos cooperación para combatira la pandemia del virus COVID-19.</div>
-        <div id="contact-list" class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4 lg:gap-12">
+        <div id="contact-list"
+          class="grid grid-cols-1 gap-5 justify-between items-start md:grid-cols-2 lg:grid-cols-4 lg:gap-12">
           <div>
             <div class="image-container shadow-fc">
               <img src="img/icons/phone.svg" alt="Ícono teléfono">
             </div>
-            <div class="text mt-6 font-medium">( 11-1111-1111 )</div>
+            <div class="text text-center mt-6 font-medium">
+              <div>(11) 3244-7948 <div class="text-base">(donaciones)</div>
+              </div>
+              <div class="mt-2">(11) 2481-6489 <div class="text-base">(ventas)</div>
+              </div>
+            </div>
           </div>
           <div>
             <div class="image-container shadow-fc">

@@ -242,19 +242,13 @@ html.menu-opened {
     border-radius: 1.5rem;
     overflow: hidden;
     display: grid;
-    max-width: 18rem;
-    grid-template-rows: 1fr 3rem auto auto;
-
-    @media (min-width: 1024px) {
-      grid-template-rows: 1fr 3rem 1fr auto;
-    }
+    max-width: 19rem;
+    grid-template-rows: 10rem 3rem minmax(0, 13rem) 1fr;
   }
 }
 
 #contact {
   #contact-list {
-    justify-content: space-between;
-
     &>div {
       display: flex;
       flex-direction: column;
@@ -262,8 +256,12 @@ html.menu-opened {
       justify-content: center;
     }
 
-    .text {
+    .text,
+    .text * {
       color: var(--main-dark-color);
+    }
+
+    .text {
       font-size: 1.2rem;
     }
 
@@ -325,6 +323,11 @@ footer {
 
   &.lg {
     padding: 0.8rem 3rem;
+  }
+
+  &.full {
+    padding: 0.8rem 3rem;
+    width: 100%;
   }
 }
 
