@@ -1,6 +1,6 @@
-@import 'variables';
-@import 'fonts';
-@import 'mixings';
+@import "variables";
+@import "fonts";
+@import "mixings";
 
 :root {
   --link-color: #222;
@@ -20,14 +20,23 @@ body * {
 body>header {
   top: 0;
   z-index: 10;
-  height: var(--header-height);
   width: 100vw;
   @include transition;
 
-  .container,
-  a,
+  a.btn {
+    @include transition(0s);
+  }
+
   #logo {
-    @include transition;
+    @include transition(.8s);
+  }
+
+  @media (min-width: 1024px) {
+
+    .container,
+    a {
+      @include transition;
+    }
   }
 
   svg {
@@ -37,10 +46,11 @@ body>header {
 
   &.collapse {
     background: var(--header-color);
-    height: 5.5rem;
 
-    img {
-      width: 5.5rem;
+    .container {}
+
+    #logo {
+      width: 5rem;
     }
   }
 
@@ -65,7 +75,61 @@ body>header {
       #logo {
         width: auto;
         height: 100%;
+        @include transition;
       }
+    }
+  }
+
+  nav {
+    z-index: 11;
+
+    #close-menu {
+      top: 2.09rem;
+      right: 1.1rem;
+      width: 2.7rem;
+    }
+  }
+
+  #logo-link {
+    @include transition(.8s);
+  }
+}
+
+html.menu-opened {
+  overflow: hidden;
+
+  header nav {
+    pointer-events: all;
+    opacity: 1;
+    background: var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    @include transition;
+
+    &>a {
+      margin: 1.5rem 0;
+      font-size: 1.5rem;
+      color: #fff;
+
+      &:not(.btn) {
+        padding: 0;
+      }
+    }
+  }
+
+  #logo-link {
+    z-index: 12;
+    transform: translateY(1rem);
+    -moz-transition: all .8s ease;
+    -o-transition: all .8s ease;
+    -webkit-transition: all .8s ease;
+    -ms-transition: all .8s ease;
+    transition: all .8s ease, width .3s ease .6s;
+
+    #logo {
+      width: 5rem;
     }
   }
 }
@@ -73,7 +137,7 @@ body>header {
 #landing {
   min-height: calc(var(--vh, 1vh) * 107);
   padding-top: calc(var(--header-height) + 10vh);
-  background-image: url('../img/1-01.jpg');
+  background-image: url("../img/1-01.jpg");
   background-size: 160%;
   background-repeat: no-repeat;
 
@@ -95,7 +159,7 @@ body>header {
 }
 
 .tracking-mega {
-  letter-spacing: .18rem;
+  letter-spacing: 0.18rem;
 }
 
 .leading-min {
@@ -111,21 +175,20 @@ body>header {
 }
 
 .md\:grid-cols-products {
-  grid-template-columns: .5fr 1fr;
+  grid-template-columns: 0.5fr 1fr;
 }
 
 .md\:grid-cols-products-reversed {
-  grid-template-columns: 1fr .5fr;
+  grid-template-columns: 1fr 0.5fr;
 
-  &>:nth-child(1) {
+  &> :nth-child(1) {
     order: 2;
   }
 
-  &>:nth-child(2) {
+  &> :nth-child(2) {
     order: 1;
   }
 }
-
 
 #hero {
   .title {
@@ -140,7 +203,7 @@ body>header {
 }
 
 #hero-2 {
-  background-image: url('../img/hero.png');
+  background-image: url("../img/hero.png");
   background-position: right top;
   background-repeat: no-repeat;
 
@@ -231,36 +294,82 @@ footer {
   }
 }
 
-
 /* Components */
 .btn {
   display: inline-block;
   border-radius: 20rem;
-  padding: .8rem 1.5rem;
+  padding: 0.8rem 1.5rem;
   font-size: 1.15rem;
   color: #fff;
   text-align: center;
   @include gradient-background;
-  @include transition(.5s);
+  @include transition(0.5s);
   background-size: 280% 100%;
 
-  &:hover {
-    background-position: 100% 0;
+  @media (hover: hover) {
+    &:hover {
+      background-position: 100% 0;
+    }
   }
 
   &.white {
     background: #fff;
     color: var(--main-color);
 
-    &:hover {
-      background: var(--main-dark-color);
-      color: #fff;
+    @media (hover: hover) {
+      &:hover {
+        background: var(--main-dark-color);
+        color: #fff;
+      }
     }
   }
 
   &.lg {
-    padding: .8rem 3rem;
+    padding: 0.8rem 3rem;
   }
+}
+
+.animated-btn {
+  position: relative;
+
+  &:before {
+    content: "";
+    width: 100%;
+    height: 0.2rem;
+    background: #fff;
+    position: absolute;
+    bottom: -0.1rem;
+    animation: loop-line 3s ease infinite;
+    overflow: hidden;
+    transform-origin: left;
+  }
+}
+
+@keyframes loop-line {
+  0% {
+    transform: scaleX(0);
+  }
+
+  49% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  50% {
+    transform-origin: right;
+  }
+
+  100% {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+
+  /*
+  50% {
+  }
+
+  100% {
+  }*/
 }
 
 #donations .block,
@@ -293,10 +402,10 @@ footer {
 
   &.w-line {
     &:before {
-      content: '';
+      content: "";
       position: absolute;
       width: 3.2rem;
-      height: .35rem;
+      height: 0.35rem;
       left: 0;
       top: -1.5rem;
       background-color: var(--main-dark-color);
@@ -321,10 +430,10 @@ footer {
   position: relative;
 
   &:before {
-    content: '';
+    content: "";
     position: absolute;
     width: 3.2rem;
-    height: .35rem;
+    height: 0.35rem;
     bottom: -2.5rem;
     left: 0;
     background-color: var(--main-dark-color);
