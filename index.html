@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js" lang="es">
+<html class="no-js overflow-x-hidden" lang="es">
 
 <head>
   <meta charset="utf-8">
@@ -17,14 +17,21 @@
         <![endif]-->
 </head>
 
-<body>
-  <header id="main-header">
-    <div class="container mx-auto flex justify-between py-8">
+<body class="overflow-x-hidden">
+  <header id="main-header" class="fixed">
+    <div class="container mx-auto flex justify-between py-4 px-5 lg:py-8 lg:px-0">
       <a href="index.html">
-        <img id="logo" src="img/logo-w.svg" alt="Logo Farmacoop" class="w-56">
+        <img id="logo" src="img/logo-w.svg" alt="Logo Farmacoop" class="w-32 lg:w-56">
       </a>
-      <nav class="text-lg font-medium flex items-center pb-12">
-        <a href="about.html" class="mr-20">Sobre nosotros</a>
+      <svg id="menu-trigger" src="img/icons/menu.svg" alt="Menu" class="h-auto w-10 lg:hidden"
+        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2b398c"
+        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+      <nav class="text-lg font-medium flex items-center pb-12 hidden lg:block">
+        <a href="#intro" class="mr-20">Sobre nosotros</a>
         <a href="#" class="mr-20">Nuestros productos</a>
         <a href="#" class="btn">Donaciones</a>
       </nav>
@@ -32,23 +39,24 @@
   </header>
   <main>
     <section id="landing" class="">
-      <div class="container mx-auto grid">
-        <div class="text-white max-w-sm">
-          <div class="uppercase tracking-mega text-sm text-gray-200">Somos Farmacoop</div>
-          <div class="mt-3 mb-6 text-6xl font-bold leading-min text-white">Salud para todo el país</div>
-          <div class="text-base leading-relaxed text-white">
-            Somos una cooperativa farmacéutica,<br>
+      <div class="container mx-auto lg:grid px-5 lg:px-0">
+        <div class="text-white lg:max-w-sm">
+          <div class="uppercase tracking-mega text-sm text-gray-200 md:text-base">Somos Farmacoop</div>
+          <div class="mt-3 mb-6 text-4xl md:text-5xl lg:text-6xl font-bold leading-min text-white">Salud para todo el
+            país</div>
+          <div class="text-xl md:text-2xl lg:text-base leading-relaxed text-white">
+            Somos una cooperativa farmacéutica,
             empresa recuperada con <span class="font-bold text-white">valores de salud popular</span>.
           </div>
-          <a class="btn white mt-8 font-medium" href="about.html">Sobre nosotros</a>
+          <a class="btn white mt-8 font-medium" href="#intro">Sobre nosotros</a>
         </div>
-        <div>
+        <div class="mt-12 lg:mt-0">
           <img src="img/landing.jpg" alt="Laboratorio">
         </div>
       </div>
     </section>
     <section id="intro" class="py-32">
-      <div class="container mx-auto max-w-medium">
+      <div class="container lg:mx-auto max-w-medium px-5 lg:px-0">
         <div class="title w-line">Farmacoop (ex Roux-Ocefa) es el primer laboratorio farmacéutico recuperado en el mundo
         </div>
         <div class="glide max-w-xl">
@@ -68,49 +76,62 @@
             </button>
           </div>
         </div>
-        <div class="my-10 max-w-2xl leading-loose">
+        <div class="my-10 max-w-2xl leading-loose text-lg lg:text-base">
           Logramos reabrir este laboratorio y nuestra fuente de trabajo, apostando por volver a ser un laboratorio de
           vanguardia en tecnología farmacéutica <span class="font-bold">con perspectiva social</span>.
         </div>
-        <a href="about.html" class="btn">Conocé nuestra historia</a>
+        <a href="#" class="btn">
+          Conocé nuestra historia
+          <div class="text-base text-white opacity-50">
+            (próximamente)
+          </div>
+        </a>
       </div>
     </section>
     <section id="hero" class="py-10">
-      <div class="container mx-auto">
+      <div class="container lg:mx-auto px-5 lg:px-0">
         <div class="title w-line">
           Farmacoop puede abastecer de alcohol en gel y barbijos de muy bajo costo a la gente y al Estado.
         </div>
       </div>
     </section>
-    <section id="products" class="py-10 ">
-      <div class="product h-product">
-        <img src="img/alcohol.png" alt="Alcohol en gel" class="absolute left-0">
-        <div class="container mx-auto flex justify-end">
-          <div class="max-w-lg pr-10 mr-10 mt-24 leading-loose line-bottom">
+    <section id="products" class="lg:py-10">
+      <div class="product h-product md:grid md:grid-cols-products md:gap-5 lg:block">
+        <img src="img/alcohol.png" alt="Alcohol en gel"
+          class="w-64 h-auto lg:w-auto lg:absolute left-0 lg:object-contain lg:h-full">
+        <div class="container lg:mx-auto flex justify-end px-5 lg:px-0">
+          <div class="max-w-lg lg:pr-10 lg:mr-10 mt-12 lg:mt-24 leading-loose line-bottom">
             <div class="title">Alcohol en gel</div>
             <div class="text-lg text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ecitur
               eget enim ut tempor. Nullam auctor odio tortor, ultricies feugiat ante elementum vel. </div>
           </div>
         </div>
       </div>
-      <div class="product h-product mt-12">
-        <img src="img/barbijo.png" alt="Barbijo" class="absolute right-0">
-        <div class="container mx-auto flex justify-start">
-          <div class="max-w-lg pr-10 ml-10 mt-32 leading-loose line-bottom">
+      <div
+        class="product h-product mt-24 lg:mt-12 flex flex-col items-end md:grid md:grid-cols-products-reversed md:reversed md:gap-5 lg:block">
+        <img src="img/barbijo.png" alt="Barbijo"
+          class="w-64 h-auto lg:w-auto lg:absolute right-0 lg:object-contain lg:h-full">
+        <div class="container mx-auto flex justify-start px-5 lg:px-0">
+          <div class="max-w-lg lg:pr-10 lg:mr-10 mt-12 lg:mt-24 leading-loose line-bottom">
             <div class="title">Barbijos</div>
             <div class="text-lg text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ecitur
               eget enim ut tempor. Nullam auctor odio tortor, ultricies feugiat ante elementum vel. </div>
           </div>
         </div>
       </div>
-      <div class="flex justify-center">
-        <a href="productos.html" class="btn mx-auto">Conocé nuestros productos</a>
+      <div class="flex justify-center mt-24 lg:mt-0">
+        <a href="#" class="btn mx-auto">
+          Conocé nuestros productos
+          <div class="text-base text-white opacity-50">
+            (próximamente)
+          </div>
+        </a>
       </div>
     </section>
-    <section class="mt-32">
-      <div id='hero-2'>
+    <section class="lg:mt-32">
+      <div id='hero-2' class="bg-cover px-5 pt-56 pb-16 lg:pt-0 lg:pb-0 lg:bg-contain">
         <div class="container mx-auto flex justify-end">
-          <div class="block">
+          <div class="block md:max-w-lg lg:max-w-none">
             <div class="title white max-w-3xl">
               Frente a la emergencia sanitaria, debemos asegurar la producción de elementos que garanticen cuidados
               preventivos.
@@ -121,8 +142,8 @@
           </div>
         </div>
       </div>
-      <div id='commitment' class="container mx-auto max-w-5xl pt-24">
-        <div class="grid gap-16">
+      <div id='commitment' class="container mx-auto max-w-5xl pt-10 lg:pt-24">
+        <div class="px-5 lg:px-0 grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16">
           <div class="block shadow-fc">
             <img src="img/comp-gel.jpg" alt="Compromiso con gel">
             <div class="text-xl p-6 leading-tight">Producir entre 8 y 10 mil frascos de alcohol en gel por
@@ -132,7 +153,7 @@
             <img src="img/comp-barbijos.jpg" alt="Compromiso con babijos">
             <div class="text-xl p-6 leading-tight">Producir 2 mil barbijos por día.</div>
           </div>
-          <div class="block shadow-fc col-span-2">
+          <div class="block shadow-fc md:col-span-2">
             <img src="img/comp-costo.jpg" alt="Compromiso bajo costo">
             <div class="text-xl p-6 leading-tight">Una venta al público a bajo costo. <span
                 class="font-black">Consideramos inmoral la especulación en tiempos de emergencia.</span></div>
@@ -140,16 +161,18 @@
         </div>
       </div>
     </section>
-    <section id='donations' class="mt-48">
+    <section id='donations' class="mt-32 lg:mt-48 px-5 lg:px-0">
       <div class="container mx-auto max-w-3xl">
         <div class="title w-line">
           Para poder trabajar y aseguar este nivel de producción, necesitamos todas las manos posibles.
         </div>
-        <div class="flex justify-center align-center">
+        <div class="flex flex-wrap justify-center align-center">
           <div class="block m-6 p-8 shadow-fc">
             <img src="img/icons/donate-1.svg" alt="Ícono ayuda económica" class="icon mx-auto mt-4 mb-16">
             <div class="text-center text-2xl font-bold mb-4">Ayuda Económica</div>
-            <div class="text-gray-800 text-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            <div class="text-gray-800 text-lg mb-8 lg:mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+              do
+              eiusmod
               tempor.
             </div>
             <a href="#mp" class="btn lg">Donar</a>
@@ -157,16 +180,16 @@
           <div class="block m-6 p-8 shadow-fc">
             <img src="img/icons/donate-2.svg" alt="Ícono ayuda materia prima" class="icon mx-auto mt-4 mb-16">
             <div class="text-center text-2xl font-bold mb-4">Materia Prima</div>
-            <div class="text-gray-800 text-lg">Recibimos alcohol etílico y fliserina 80g. </div>
+            <div class="text-gray-800 text-lg mb-8 lg:mb-0">Recibimos alcohol etílico y fliserina 80g. </div>
             <a href="#contact" class="btn lg">Donar</a>
           </div>
         </div>
       </div>
     </section>
-    <section id="contact" class="py-40">
-      <div class="container mx-auto px-24">
-        <div class="title w-line pb-20">Proponemos cooperación para combatira la pandemia del virus COVID-19.</div>
-        <div id="contact-list" class="grid grid-cols-4 gap-12">
+    <section id="contact" class="py-24 lg:py-40">
+      <div class="container mx-auto px-5 lg:px-24">
+        <div class="title w-line lg:pb-20">Proponemos cooperación para combatira la pandemia del virus COVID-19.</div>
+        <div id="contact-list" class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4 lg:gap-12">
           <div>
             <div class="image-container shadow-fc">
               <img src="img/icons/phone.svg" alt="Ícono teléfono">
@@ -180,59 +203,64 @@
             <div class="text mt-6 font-medium">coop.farmacooplimitada@gmail.com</div>
           </div>
           <div>
-            <div class="image-container shadow-fc">
-              <img src="img/icons/twitter.svg" alt="Ícono twitter">
-            </div>
-            <div class="text mt-6 font-medium">@farmacoop_</div>
+            <a href="https://twitter.com/farmacoop_" target="_blank" class="text-center">
+              <div class="image-container shadow-fc">
+                <img src="img/icons/twitter.svg" alt="Ícono twitter">
+              </div>
+              <div class="text mt-6 font-medium">@farmacoop_</div>
+            </a>
           </div>
           <div>
-            <div class="image-container shadow-fc">
-              <img src="img/icons/instagram.svg" alt="Ícono instagram">
-            </div>
-            <div class="text mt-6 font-medium">@farmacoop_</div>
+            <a href="https://www.instagram.com/farmacoop_/" target="_blank" class="text-center">
+              <div class="image-container shadow-fc">
+                <img src="img/icons/instagram.svg" alt="Ícono instagram">
+              </div>
+              <div class="text mt-6 font-medium">@farmacoop_</div>
+            </a>
           </div>
         </div>
         <div class="title w-line l-bottom pt-24">Comunicate con nosotros. Estamos disponibles
           ante cualquier consulta</div>
       </div>
     </section>
-    <footer class="px-32 pt-20 pb-8">
-      <div class="flex justify-between">
-        <div>
-          <img id='footer-logo' src="img/logo-w.svg" alt="Logo Farmacoop">
-          <div class="text-xl mt-4 mb-6">coop.farmacooplimitada@gmail.com</div>
+    <footer class="px-5 lg:px-32 pt-12 lg:pt-20 pb-8">
+      <div class="flex flex-wrap justify-between">
+        <div class="mb-12 lg:mb-0 w-full md:w-1/2 lg:w-auto md:px-8 lg:px-2">
+          <img id='footer-logo' src="img/logo-w.svg" alt="Logo Farmacoop" class="w-32">
+          <div class="text-base mt-4 mb-6">coop.farmacooplimitada@gmail.com</div>
           <div class="flex">
-            <a href="instagram">
+            <a href="https://www.instagram.com/farmacoop_/" target="_blank">
               <img src="img/icons/instagram-round.svg" alt="Instagram" class="w-12 mr-4">
             </a>
-            <a href="twitter">
-              <img src="img/icons/twitter-round.svg" alt="Twitter" class="w-12">
+            <a href="https://twitter.com/farmacoop_" target="_blank">
+              <img src=" img/icons/twitter-round.svg" alt="Twitter" class="w-12">
             </a>
           </div>
         </div>
-        <div class="mt-8">
+        <div class="mb-12 lg:mb-0 lg:mt-8 w-full md:w-1/2 lg:w-auto md:px-8 lg:px-2">
           <div class="mb-6">
-            <a href="#about" class="text-2xl font-bold">Sobre nosotros</a>
+            <a href="#about" class="text-base lg:text-xl font-bold">Sobre nosotros</a>
           </div>
           <div class="mb-6">
-            <a href="#products" class="text-2xl font-bold">Nuestros productos</a>
+            <a href="#products" class="text-base lg:text-xl font-bold">Nuestros productos</a>
           </div>
           <div>
-            <a href="#donations" class="text-2xl font-bold">Donaciones</a>
+            <a href="#donations" class="text-base lg:text-xl font-bold">Donaciones</a>
           </div>
         </div>
-        <div class="mt-8">
-          <div class="text-2xl font-bold mb-6">Contacto</div>
-          <div class="text-xl mb-6">(011) 1111 1111</div>
-          <div class="text-xl mb-6"><a
-              href="mailto:coop.farmacooplimitada@gmail.com">coop.farmacooplimitada@gmail.com</a></div>
+        <div class="mb-12 lg:mb-0 lg:mt-8 w-full md:w-1/2 lg:w-auto md:px-8 lg:px-2">
+          <div class="text-base lg:text-xl font-bold mb-6">Contacto</div>
+          <div class="lg:text-base mb-6">(011) 1111 1111</div>
+          <div class="lg:text-base"><a
+              href="mailto:coop.farmacooplimitada@gmail.com">coop.farmacooplimitada@gmail.com</a>
+          </div>
         </div>
-        <div class="mt-8">
-          <div class="text-2xl font-bold mb-6">¿Dónde estamos?</div>
-          <div class="text-xl mb-6">Avenida Piedrabuena 3253</div>
-          <div class="text-xl mb-6">Ciudad de Buenos Aires</div>
-          <div class="text-xl mb-6">Argentina</div>
-          <div class="text-xl mb-6">C1439GVB</div>
+        <div class="mb-12 lg:mb-0 lg:mt-8 w-full md:w-1/2 lg:w-auto md:px-8 lg:px-2">
+          <div class="text-base lg:text-xl font-bold mb-6">¿Dónde estamos?</div>
+          <div class="lg:text-base mb-6">Avenida Piedrabuena 3253</div>
+          <div class="lg:text-base mb-6">Ciudad de Buenos Aires</div>
+          <div class="lg:text-base mb-6">Argentina</div>
+          <div class="lg:text-base">C1439GVB</div>
         </div>
       </div>
       <div class="text-center">2020. Farmacoop</div>

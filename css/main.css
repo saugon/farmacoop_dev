@@ -1,8 +1,10 @@
 :root {
   --main-color: #00aaeb;
   --main-dark-color: #2b398c;
-  --header-height: 7rem;
-  --secondary-color: #141d3f; }
+  --header-height: 5rem;
+  --desktop-header-height: 7rem;
+  --secondary-color: #141d3f;
+  --header-color: #045a93; }
 
 @font-face {
   font-family: "Farmacoop";
@@ -33,7 +35,6 @@ body * {
   height: auto; }
 
 body > header {
-  position: fixed;
   top: 0;
   z-index: 10;
   height: var(--header-height);
@@ -51,27 +52,44 @@ body > header {
     -webkit-transition: all 0.3s ease;
     -ms-transition: all 0.3s ease;
     transition: all 0.3s ease; }
+  body > header svg {
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    stroke: #fff; }
   body > header.collapse {
-    background: rgba(20, 29, 63, 0.3);
-    height: 6rem; }
-    body > header.collapse .container {
-      padding: 1rem 0;
-      height: 100%; }
-    body > header.collapse nav {
-      padding: 0; }
-      body > header.collapse nav a {
-        color: #fff; }
-    body > header.collapse #logo {
-      width: auto;
-      height: 100%; }
+    background: var(--header-color);
+    height: 5.5rem; }
+    body > header.collapse img {
+      width: 5.5rem; }
+  @media (min-width: 1024px) {
+    body > header.collapse {
+      background: rgba(20, 29, 63, 0.3);
+      height: 6rem; }
+      body > header.collapse .container {
+        padding: 1rem 0;
+        height: 100%; }
+      body > header.collapse nav {
+        padding: 0; }
+        body > header.collapse nav a {
+          color: #fff; }
+      body > header.collapse #logo {
+        width: auto;
+        height: 100%; } }
 
 #landing {
   min-height: calc(var(--vh, 1vh) * 107);
   padding-top: calc(var(--header-height) + 10vh);
   background-image: url("../img/1-01.jpg");
-  background-size: contain;
-  background-position: left top;
+  background-size: 160%;
   background-repeat: no-repeat; }
+  @media (min-width: 1024px) {
+    #landing {
+      background-size: contain;
+      background-position: left top;
+      padding-top: calc(var(--desktop-header-height) + 10vh); } }
   #landing .container {
     grid-template-columns: 30rem minmax(0, 1fr);
     gap: 5rem;
@@ -91,27 +109,34 @@ body > header {
 .shadow-fc {
   box-shadow: 17px 22px 35px 0px rgba(50, 50, 50, 0.11); }
 
+.md\:grid-cols-products {
+  grid-template-columns: .5fr 1fr; }
+
+.md\:grid-cols-products-reversed {
+  grid-template-columns: 1fr .5fr; }
+  .md\:grid-cols-products-reversed > :nth-child(1) {
+    order: 2; }
+  .md\:grid-cols-products-reversed > :nth-child(2) {
+    order: 1; }
+
 #hero .title {
   max-width: 39rem; }
 
 #products img {
-  height: 100%;
-  max-width: 39rem;
-  object-fit: contain; }
+  max-width: 39rem; }
 
 #hero-2 {
   background-image: url("../img/hero.png");
-  background-size: contain;
   background-position: right top;
-  background-repeat: no-repeat;
-  height: 45rem; }
-  #hero-2 .block > * {
-    padding-left: 4rem; }
-  #hero-2 .title {
-    margin-top: 20rem; }
+  background-repeat: no-repeat; }
+  @media (min-width: 1024px) {
+    #hero-2 {
+      height: 45rem; }
+      #hero-2 .block > * {
+        padding-left: 4rem; }
+      #hero-2 .title {
+        margin-top: 20rem; } }
 
-#commitment .grid {
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
 #commitment .block {
   border-radius: 1.2rem;
   overflow: hidden; }
@@ -128,7 +153,10 @@ body > header {
   overflow: hidden;
   display: grid;
   max-width: 18rem;
-  grid-template-rows: 1fr 3rem 1fr auto; }
+  grid-template-rows: 1fr 3rem auto auto; }
+  @media (min-width: 1024px) {
+    #donations .block {
+      grid-template-rows: 1fr 3rem 1fr auto; } }
 
 #contact #contact-list {
   justify-content: space-between; }
@@ -151,8 +179,9 @@ body > header {
 
 footer {
   background: var(--secondary-color); }
-  footer #footer-logo {
-    width: 14rem; }
+  @media (min-width: 1024px) {
+    footer #footer-logo {
+      width: 14rem; } }
   footer * {
     color: #fff; }
 
@@ -193,17 +222,22 @@ footer {
   -webkit-transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;
   transition: all 0.3s ease; }
-  #donations .block:hover,
-  #contact #contact-list > div:hover {
-    transform: scale(1.05); }
+  @media (hover: hover) {
+    #donations .block:hover,
+    #contact #contact-list > div:hover {
+      transform: scale(1.05); } }
 
 .title {
   position: relative;
-  font-size: 2.8rem;
+  font-size: 1.8rem;
   font-weight: 900;
   color: #4e4e4e;
   line-height: 1.15;
-  margin-bottom: 2rem; }
+  margin: 0 0 2rem; }
+  @media (min-width: 1024px) {
+    .title {
+      font-size: 2.8rem;
+      margin: 0 0 2rem; } }
   .title.white {
     color: #fff; }
   .title.w-line:before {
@@ -211,12 +245,18 @@ footer {
     position: absolute;
     width: 3.2rem;
     height: .35rem;
-    top: -2.5rem;
     left: 0;
+    top: -1.5rem;
     background-color: var(--main-dark-color); }
+    @media (min-width: 1024px) {
+      .title.w-line:before {
+        top: -2.5rem; } }
   .title.w-line.l-bottom:before {
     top: auto;
-    bottom: -2.5rem; }
+    bottom: -1.5rem; }
+    @media (min-width: 1024px) {
+      .title.w-line.l-bottom:before {
+        bottom: -2.5rem; } }
 
 .line-bottom {
   position: relative; }
@@ -229,20 +269,25 @@ footer {
     left: 0;
     background-color: var(--main-dark-color); }
 
-.glide .glide__slides img {
-  border-radius: 2rem; }
-.glide .glide__arrow {
-  border: none;
-  box-shadow: none;
-  padding: 0; }
-  .glide .glide__arrow img {
-    width: 2rem; }
-.glide .glide__arrow--left {
-  left: -3rem;
-  transform: translateY(-50%) rotate(180deg);
-  transform-origin: center; }
-.glide .glide__arrow--right {
-  right: -3rem; }
+.glide {
+  width: auto; }
+  @media (min-width: 1024px) {
+    .glide {
+      width: 100%; } }
+  .glide .glide__slides img {
+    border-radius: 2rem; }
+  .glide .glide__arrow {
+    border: none;
+    box-shadow: none;
+    padding: 0; }
+    .glide .glide__arrow img {
+      width: 2rem; }
+  .glide .glide__arrow--left {
+    left: -3rem;
+    transform: translateY(-50%) rotate(180deg);
+    transform-origin: center; }
+  .glide .glide__arrow--right {
+    right: -3rem; }
 
 .max-w-medium {
   max-width: 44rem; }
@@ -251,7 +296,9 @@ section {
   position: relative; }
 
 .h-product {
-  position: relative;
-  height: 35rem; }
+  position: relative; }
+  @media (min-width: 1024px) {
+    .h-product {
+      height: 35rem; } }
 
 /*# sourceMappingURL=main.css.map */
