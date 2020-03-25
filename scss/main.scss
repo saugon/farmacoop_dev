@@ -173,19 +173,21 @@ html.menu-opened {
   box-shadow: 17px 22px 35px 0px rgba(50, 50, 50, 0.11);
 }
 
-.md\:grid-cols-products {
-  grid-template-columns: 0.5fr 1fr;
-}
-
-.md\:grid-cols-products-reversed {
-  grid-template-columns: 1fr 0.5fr;
-
-  &> :nth-child(1) {
-    order: 2;
+@media (min-width: 768px) {
+  .md\:grid-cols-products {
+    grid-template-columns: 0.5fr 1fr;
   }
 
-  &> :nth-child(2) {
-    order: 1;
+  .md\:grid-cols-products-reversed {
+    grid-template-columns: 1fr 0.5fr;
+
+    &> :nth-child(1) {
+      order: 2;
+    }
+
+    &> :nth-child(2) {
+      order: 1;
+    }
   }
 }
 
@@ -197,8 +199,6 @@ html.menu-opened {
 
 #products img {
   max-width: 39rem;
-
-  @media (min-width: 768px) {}
 }
 
 #hero-2 {

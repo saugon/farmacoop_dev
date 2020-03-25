@@ -161,16 +161,16 @@ html.menu-opened {
 .shadow-fc {
   box-shadow: 17px 22px 35px 0px rgba(50, 50, 50, 0.11); }
 
-.md\:grid-cols-products {
-  grid-template-columns: 0.5fr 1fr; }
+@media (min-width: 768px) {
+  .md\:grid-cols-products {
+    grid-template-columns: 0.5fr 1fr; }
 
-.md\:grid-cols-products-reversed {
-  grid-template-columns: 1fr 0.5fr; }
-  .md\:grid-cols-products-reversed > :nth-child(1) {
-    order: 2; }
-  .md\:grid-cols-products-reversed > :nth-child(2) {
-    order: 1; }
-
+  .md\:grid-cols-products-reversed {
+    grid-template-columns: 1fr 0.5fr; }
+    .md\:grid-cols-products-reversed > :nth-child(1) {
+      order: 2; }
+    .md\:grid-cols-products-reversed > :nth-child(2) {
+      order: 1; } }
 #hero .title {
   max-width: 39rem; }
 
